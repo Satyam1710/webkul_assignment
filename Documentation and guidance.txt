@@ -1,0 +1,77 @@
+DOCUMENTATION AND EXPLANATION OF MY APPROACH FOR CREATING THIS CHATBOT
+
+CODE EXPLANATION NUMBER FIRST
+
+1. Required libraries to be installed and imported:- 
+
+langchain
+chromadb
+pypdf
+tiktoken
+huggingface_hub
+InstructorEmbedding 
+sentence_transformers
+bitsandbytes
+transformers
+sentence_transformers
+accelerate
+faiss-gpu
+
+CODE EXPLANATION NUMBER SECOND
+
+2. First of all i Created a Configuration class, which contains some important parameters regarding
+model such as model_name , path and split_chunk_size.
+
+CODE EXPLANATION NUMBER THIRD
+
+3. Created a get_model funtion for choosing model , in this project i found "gpt2" model more suitable
+that's why i am using "gpt2" whis is a BERT based model .
+This function can be used to pass multiple model.
+
+CODE EXPLANATION NUMBER FOURTH
+
+4. Pipeline, Hugging Face pipeline The term "pipeline" is often used to describe the architecture 
+or workflow of a model or system that processes input data through a series of stages, with each 
+stage performing a specific operation.Various tasks are often broken down into subtasks, and a 
+pipeline structure helps organize and execute these tasks in a coordinated manner.
+
+I have used huggingfacepipeline here in this project.
+
+CODE EXPLANATION NUMBER FIFTH
+
+5. langchain, LangChain is an open source orchestration framework for the development of 
+applications using large language models (LLMs). Available in both Python- and 
+Javascript-based libraries, LangChain’s tools and APIs simplify the process of building 
+LLM-driven applications like chatbots and virtual agents.
+
+CODE EXPLANATION NUMBER SIXTH
+
+6. Splittrd the text using text_splitter using RecursiveCharacterTextSplitter
+
+CODE EXPLANATION NUMBER SEVENTH
+
+7.Embedding, "Embedding" refers to the process of representing data, often categorical
+ or discrete data, in a continuous vector space. This is commonly used in natural language 
+ processing (NLP) and other areas where the input data may have a discrete nature, such as 
+ categorical variables or words.
+
+ I have used huggingfaceEmbedding in this project.
+
+ CODE EXPLANATION NUMBER EIGHTH
+
+8. Created a vector databse that gonna store the chunks of text and from these stores furthur
+similarity search and max marginal reaserch can be implemented.
+
+CODE EXPLANATION NUMBER Ninth
+
+9. Established an advanced RAG System.
+Advanced RAG (Retrieval-Augmented Generation) In the context of natural language processing,
+ RAG refers to a model architecture that combines retrieval-based methods with generative models. 
+ It is often used for tasks like open-domain question answering, where a retriever selects relevant 
+ passages, and a generator creates a coherent response.
+
+CODE EXPLANATION NUMBER TENTH
+
+10. Created UI (User-Interface) using Gradio. But At the moment this part only works on Google Colab.
+ Gradio and Kaggle started having compatibility issues recently. SO that section of code will only run 
+ on google-colab not on kaggle.
